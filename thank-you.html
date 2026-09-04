@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Confirmation | SPE-KNUST</title>
+    <link rel="shortcut icon" href="spe.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spe-blue: #003366;
+            --spe-gold: #FFC72C;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9f9f9;
+            --card-bg: #ffffff;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f3f7fb 100%);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background-color: white;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .header a {
+            display: inline-block;
+        }
+
+        .header img {
+            height: 60px;
+            width: auto;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            width: min(100%, 640px);
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            width: min(140px, 40vw);
+            height: auto;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            color: var(--spe-blue);
+            margin-bottom: 0.75rem;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            line-height: 1.2;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            line-height: 1.7;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin: 0.5rem 0 1.25rem;
+            color: var(--spe-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-4px);
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0.9rem 1rem;
+            }
+
+            .header img {
+                height: 50px;
+            }
+
+            .card {
+                padding: 1.5rem 1rem;
+                border-radius: 18px;
+            }
+
+            .social-links {
+                gap: 0.75rem;
+            }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" aria-label="Go to homepage">
+            <img src="i5.png" alt="SPE KNUST Logo">
+        </a>
+    </header>
+
+    <main class="content">
+        <section class="card" aria-labelledby="confirmation-title">
+            <img src="i5.png" alt="SPE KNUST Logo" class="logo">
+            <h1 id="confirmation-title">Thank you for your submission!</h1>
+            <p>Check your email for a confirmation message. We will get back to you shortly.</p>
+            <p><a href="index.html" class="home-link">Return to Home</a></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/spe-knust" aria-label="LinkedIn">
+                    <img src="icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.whatsapp.com/channel/0029VakftD5ATRSrD2UAYJ0U" aria-label="WhatsApp">
+                    <img src="icons/whatsapp.svg" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/+UnU2bavY94M5YjI0" aria-label="Telegram">
+                    <img src="icons/telegram.svg" alt="Telegram">
+                </a>
+                <a href="https://www.instagram.com/spe_knust?igsh=YnBwdnRuNG4zNDkw" aria-label="Instagram">
+                    <img src="icons/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://x.com/KnustSpe" aria-label="X (Twitter)">
+                    <img src="icons/x.svg" alt="X (Twitter)">
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

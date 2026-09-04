@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form closed | SPE-KNUST</title>
+    <link rel="shortcut icon" href="spe.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spe-blue: #003366;
+            --spe-gold: #FFC72C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header a {
+            display: inline-block;
+        }
+
+        .header img {
+            height: 60px;
+            width: auto;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+            max-width: 200px;
+            height: auto;
+        }
+
+        h1 {
+            color: var(--spe-blue);
+            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        p {
+            color: #444;
+            margin-bottom: 2rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .social-links img {
+            width: 45px;
+            height: 45px;
+        }
+       
+        .social-links img:hover {
+          transform: translateY(-8px);
+        }
+
+        @media (max-width: 768px) {
+            .header img {
+                height: 50px;
+            }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+        }
+
+            .content {
+                padding: 1.5rem 1rem;
+            }
+
+            .logo {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img src="i5.png" alt="SPE KNUST Logo">
+        </a>
+    </header>
+
+    <main class="content">
+        <img src="i5.png" alt="SPE KNUST Logo" class="logo">
+        <h1>This form is currrently closed.</h1>
+        <p>Check our official communication platforms to be notified.</p>
+        <p><a href="index.html">Return to Home</a></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/spe-knust" aria-label="LinkedIn">
+                <img src="icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.whatsapp.com/channel/0029VakftD5ATRSrD2UAYJ0U" aria-label="WhatsApp">
+                <img src="icons/whatsapp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://t.me/+UnU2bavY94M5YjI0" aria-label="Telegram">
+                <img src="icons/telegram.svg" alt="Telegram">
+            </a>
+            <a href="https://www.instagram.com/spe_knust?igsh=YnBwdnRuNG4zNDkw" aria-label="Instagram">
+                <img src="icons/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://x.com/KnustSpe" aria-label="X (Twitter)">
+                <img src="icons/x.svg" alt="X (Twitter)">
+            </a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,788 @@
+:root {
+    --font-primary: 'Poppons', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --spe-blue: #003366;
+    --spe-gold: #FFC72C;
+    --link-hover-color: #005f9e;
+}
+
+.light-theme {
+    --background-color: #f4f7f6;
+    --text-color: #333333;
+    --nav-bg: #ffffff;
+    --card-bg: #ffffff;
+    --footer-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --header-color: #003366;
+}
+
+/* Nav start */
+.navbar {
+    background-color: rgba(255,255,255,0.85);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    min-height: 70px;
+}
+
+.navbar-logo img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 10px;
+    border-radius: 6px;
+    position: relative;
+    transition: color 0.3s, background 0.3s;
+    background: transparent;
+}
+
+.navbar-menu li a.active,
+.navbar-menu li a:hover {
+    color: var(--spe-blue);
+    background: rgba(0, 60, 88, 0.08);
+    font-weight: 600;
+}
+
+.navbar-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--spe-blue);
+    transition: width 0.3s ease-in-out;
+}
+
+
+.navbar-menu li a:hover::after,
+.navbar-menu li a.active::after {
+    width: 100%;
+}
+.navbar-toggle{
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggle .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/*Nav end */
+
+/* 5. FOOTER STYLES  */
+footer {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    color: #6b7280;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+footer .max-w-7xl {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    footer .max-w-7xl {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-container {
+        padding: 0 12px;
+        min-height: 56px;
+    }
+    .navbar-menu {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 340px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -4px 0 32px rgba(0,0,0,0.18);
+        align-items: flex-start;
+        text-align: center;
+        display: none;
+        border-bottom: none;
+        border-left: 1px solid var(--border-color);
+        padding-top: 70px;
+        padding-bottom: 32px;
+        padding-left: 0;
+        padding-right: 0;
+        transform: translateX(100%);
+        opacity: 0;
+        z-index: 1001;
+    }
+    .navbar-menu.active {
+        display: flex;
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .navbar-menu li {
+        width: 100%;
+        padding: 2px 16px;
+        margin: 14px 0;
+    }
+    .navbar-menu li a {
+        width: 100%;
+        padding: 2px 16px;
+        font-size: 1.45rem;
+        border-radius: 0 16px 16px 0;
+        background: none;
+        color: var(--text-color);
+        border-bottom: 1px solid var(--border-color);
+        transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+        box-shadow: none;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .navbar-menu li a.active,
+        .navbar-menu li a:hover {
+        background: linear-gradient(90deg, #f2f6fa 80%, #eaf0fc 100%);
+        color: var(--spe-blue);
+        font-weight: 600;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+ 
+    .navbar-menu li a:active {
+        background: #eaf0fc;
+        color: #003058;
+    }
+    .navbar-toggle {
+        display: block;
+        z-index: 1002;
+    }
+}
+
+footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #003366;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #003366;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #0077b6;
+    text-decoration: underline;
+}
+
+footer img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer .w-28 {
+    width: 7rem;
+    margin-bottom: 0.5rem;
+}
+
+footer .flex {
+    display: flex;
+    align-items: center;
+}
+
+footer .space-x-3 > * {
+    margin-right: 0.75rem;
+}
+
+footer .space-x-2 > * {
+    margin-right: 0.5rem;
+}
+
+footer .h-10 {
+    height: 2.5rem;
+}
+
+footer .border-t {
+    border-top: 1px solid #e5e7eb;
+}
+
+footer .text-center {
+    text-align: center;
+}
+
+footer .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+footer .text-xs {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+footer .text-gray-500 {
+    color: #666;
+}
+
+footer .text-blue-900 {
+    color: #003366;
+}
+
+footer .font-semibold {
+    font-weight: 600;
+}
+
+footer .font-bold {
+    font-weight: 700;
+}
+
+footer .mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+footer .mb-4 {
+    margin-bottom: 1rem;
+}
+
+footer .mt-2 {
+    margin-top: 0.5rem;
+}
+
+footer .justify-center {
+    justify-content: center;
+}
+
+footer .gap-8 {
+    gap: 2rem;
+}
+
+footer .bg-white {
+    background: #f8fafc;
+}
+
+/* Footer end */
+
+/* Committeepage Styles */
+
+body {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    background: var(--background-color, #f4f7f6);
+    color: var(--text-color, #333);
+    margin: 0;
+}
+
+.background {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.text-button {
+    max-width: 800px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+h1.committee-hero-title {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p.committee-hero-desc {
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    opacity: 0.95;
+}
+
+.committee-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.committee-desc {
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button1 {
+    background: #fff;
+    color: #003366;
+    font-weight: 700;
+    border: 2px solid #ecca40;
+    border-radius: 24px;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.15rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+.cta-button1:hover {
+    background: #ecca40;
+    color: #003366;
+    border-color: #003366;
+}
+
+.committee-hero-image {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+}
+.committee-hero-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .committee-hero {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem 0.5rem;
+    }
+    .committee-hero-content {
+        padding-right: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .committee-hero-image {
+        padding-left: 0;
+    }
+}
+
+/* Committee List Section */
+.committee-list-section {
+    margin: 3rem auto 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+.committee-list-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.committee-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+.committee-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    background: #f8fafc;
+    transform: translateY(-2px);
+}
+.committee-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2px;
+}
+.committee-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Membership Benefits Section */
+.benefits-section {
+    margin: 3rem auto 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+.benefits-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+.benefit-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+.benefit-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    background: #f8fafc;
+}
+.benefit-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 0.7rem;
+}
+.benefit-card p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0;
+}
+.dark-theme .benefit-card {
+    background: #232a36;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.dark-theme .benefit-card h3 {
+    color: #ffd700;
+}
+.dark-theme .benefit-card p {
+    color: #e0e6f6;
+}
+.dark-theme .benefit-card:hover {
+    background: #181f2a;
+}
+@media (max-width: 700px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .benefit-card {
+        padding: 1.2rem 0.7rem;
+    }
+    }
+
+.committee-join-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+.committee-join-btn {
+    background: #ecca40;
+    color: #003366;
+    font-weight: 700;
+    border: none;
+    border-radius: 24px;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.committee-join-btn:hover {
+    background: #003366;
+    color: #ecca40;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 700px) {
+    .background {
+        height: 250px;
+    }
+    h1.committee-hero-title {
+        font-size: 2.2rem;
+    }
+    p.committee-hero-desc {
+        font-size: 1.1rem;
+    }
+    .text-button {
+        padding: 0 15px;
+        gap: 0.4rem;
+    }
+    .committee-join-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+    }
+    .committee-join-btn-wrapper {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .committee-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+        max-width: 500px;
+    }
+    .committee-card {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+    .committee-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+    .committee-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    .committee-list-section {
+        margin: 2rem auto 1.5rem auto;
+        padding: 0 0.5rem;
+    }
+    .committee-list-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* LIVELY BACKGROUND FOR COMMITTEE SECTION */
+.lively-bg {
+    /*background: linear-gradient(-18deg, #f4f7f6 0.5%, #094aac 70%);*/
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* LIVELY COMMITTEE CARDS */
+.lively-card {
+    background:#fff;
+    border: 2px solid #2c53d3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.lively-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    background: #2c53d38f;
+    transform: translateY(-2px);
+}
+.lively-card h3 {
+    color: #003366;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2px;
+}
+.lively-card p {
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.lively-card:hover p{
+    color: white;
+}
+
+.lively-card:hover h3{
+    color: white;
+}
+
+/* FAB */
+.whatsapp{
+    position: fixed;
+    bottom: 150px;
+    right: 35px;
+    outline: none;
+    border: none;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.whatsapp a{
+    color: #63E6BE;
+    font-weight: bolder;
+}
+
+.telegram{
+    position: fixed;
+    bottom: 100px;
+    right: 35px;
+    outline: none;
+    border: none;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.telegram a{
+    color: #003058;
+    font-weight: bolder;
+}
+
+.linkedin{
+    position: fixed;
+    bottom: 50px;
+    right: 35px;
+    outline: none;
+    border: none;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin a{
+    color: #003058;
+    font-weight: bolder;
+}
+
+.floating-alert {
+    position: fixed;
+    bottom: 230px;
+    right: 35px;
+    background-color: #003058;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.floating-alert.show {
+    opacity: 1; 
+    visibility: visible;
+}
+
+.floating-alert p {
+    margin: 0;
+    font-weight: bold;
+}
